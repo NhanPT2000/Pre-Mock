@@ -9,5 +9,7 @@ namespace Pre_Mock.Models.Users
         public Guid RoleId { get; set; }
         [Required(ErrorMessage = "Role name is required.")]
         public string RoleName { get; set; }
+
+        ICollection<User>? Users { get; set; }
     }
 }

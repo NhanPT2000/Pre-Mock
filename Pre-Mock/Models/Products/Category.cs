@@ -14,5 +14,6 @@ namespace Pre_Mock.Models.Products
         [Column(TypeName ="nvarchar(50)")]
         [DisplayFormat(NullDisplayText ="No status")]
         public string? Status { get; set; }
+        ICollection<Product>? Products { get; set;}
     }
 }

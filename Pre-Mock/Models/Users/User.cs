@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Pre_Mock.Models.Orders;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pre_Mock.Models.Users
@@ -22,6 +23,9 @@ namespace Pre_Mock.Models.Users
         [Column(TypeName = "nvarchar(50)")]
         [EmailAddress]
         public string Email { get; set; }
-
+        public UserDetails UserDetails { get; set; }
+        public ICollection<BuyUser>? BuyUsers { get; set; }
+        public Guid? BuyUserId { get; set; }
+        ICollection<Order>? Orders { get; set; }
     }
 }
