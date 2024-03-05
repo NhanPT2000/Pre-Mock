@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pre_Mock.Models.Products
 {
@@ -7,8 +8,11 @@ namespace Pre_Mock.Models.Products
         [Key]
         [Required]
         public Guid CategoryId { get; set; }
-        [Required()]
+        [Required(ErrorMessage ="Category name is required.")]
+        [Column(TypeName ="nvarchar(50)")]
         public string CategoryName { get; set; }
-        public string Status { get; set; }
+        [Column(TypeName ="nvarchar(50)")]
+        [DisplayFormat(NullDisplayText ="No status")]
+        public string? Status { get; set; }
     }
 }
