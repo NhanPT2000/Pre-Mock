@@ -10,6 +10,6 @@ namespace Pre_Mock.Models.Users
         [Required(ErrorMessage = "Role name is required.")]
         public string RoleName { get; set; }
 
-        ICollection<User>? Users { get; set; }
+        public ICollection<User>? Users { get; set; }
     }
 }
